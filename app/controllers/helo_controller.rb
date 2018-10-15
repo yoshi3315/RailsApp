@@ -1,5 +1,6 @@
 class HeloController < ApplicationController
-
+  protect_from_forgery
+  
   def index
     if request.post?
       @title = 'Result'
