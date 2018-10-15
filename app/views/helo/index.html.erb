@@ -1,6 +1,7 @@
 <h1><%= @title %></h1>
 <p><%= @msg %></p>
 <%= form_tag(controller: 'helo', action: 'index') do %>
-  <%= text_field_tag('input1') %>
+  <%= check_box_tag('check1') %>
+  <%= label_tag('check1', 'check box') %>
   <%= submit_tag('Click') %>
 <% end %>
