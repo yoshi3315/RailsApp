@@ -26,7 +26,8 @@
     <th>メール</th>
     <th>投稿日時</th>
   </tr>
-  <% @dengon_data.each do |key, obj| %>
+  <% p @dengon_data
+  @dengon_data.each do |key, obj| %>
     <tr>
       <td class='msg'><%= obj[:msg] %></td>
       <td class='name'><%= obj[:name] %></td>
