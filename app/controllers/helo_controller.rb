@@ -5,7 +5,7 @@ class HeloController < ApplicationController
       @title = 'Result'
       if params['s1']
         @msg = 'you selected: '
-        for val in params[:s1]
+        params[:s1].each do |val|
           @msg += val + ' '
         end
       else
