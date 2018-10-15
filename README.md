@@ -7,3 +7,5 @@
 
 * PostgreSQL version 9.2.24
 
+* heroku url
+https://tyonyumon-railsapp.herokuapp.com/helo
