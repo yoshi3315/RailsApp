@@ -1,12 +1,15 @@
 class HeloController < ApplicationController
 
   def index
-    if params[:msg] != nil
-      @title = params[:msg]
+    if request.post?
+      @title = 'Result'
+      @msg = 'you typed: ' + params[:input1] + '.'
+      @value = params[:input1]
     else
-      @title = 'index'
+      @title = 'Index'
+      @msg = 'type text...'
+      @value = ''
     end
-    @msg = 'this is redirect sample...'
   end
   
   def other
