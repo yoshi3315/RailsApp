@@ -1,20 +1,20 @@
 class HeloController < ApplicationController
+  protect_from_forgery
+  
   def index
-    if params[:msg] != nil 
-      msg = 'Hello, ' + params[:msg] + '!'
+    if request.post?
+      @title = 'Result'
+      @msg = 'you typed: ' + params[:input1] + '.'
+      @value = params[:input1]
     else
-      msg = 'this is sample page.'
+      @title = 'Index'
+      @msg = 'type text...'
+      @value = ''
     end
-    
-    html = '
-    <html>
-    <body>
-      <h1>Sample Page</h1>
-      <p>' + msg + '</p>
-    </body>
-    </html>
-    '
-    
-    render html: html.html_safe
   end
+  
+  def other
+    redirect_to action: :index, params: { msg: 'from other page' }
+  end
+
 end
