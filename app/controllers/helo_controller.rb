@@ -14,7 +14,7 @@ class HeloController < ApplicationController
   end
   
   def other
-    redirect_to action: :index, params: {msg: 'from other page'}
+    redirect_to action: :index, params: { msg: 'from other page' }
   end
 
 end
