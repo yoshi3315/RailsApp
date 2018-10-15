@@ -1,14 +1,20 @@
 class HeloController < ApplicationController
   def index
-    msg = '
+    if params[:msg] != nil 
+      msg = 'Hello, ' + params[:msg] + '!'
+    else
+      msg = 'this is sample page.'
+    end
+    
+    html = '
     <html>
     <body>
       <h1>Sample Page</h1>
-      <p>this is Rails sample page!</P>
+      <p>' + msg + '</p>
     </body>
     </html>
     '
     
-    render html: msg.html_safe
+    render html: html.html_safe
   end
 end
