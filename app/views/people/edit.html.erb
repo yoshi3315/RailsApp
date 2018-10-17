@@ -1,7 +1,7 @@
 <h1>People#edit</h1>
 <p><%= @msg %></p>
 <table>
-  <%= form_for(@person, url: { controller: 'people', action: 'update' }) do |form| %>
+  <%= form_for(@person, url: { controller: 'people', action: 'update', id: @person.id }) do |form| %>
     <tr><th>Name</th>
       <td><%= form.text_field :name %></td>
     </tr>
