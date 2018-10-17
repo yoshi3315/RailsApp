@@ -27,4 +27,9 @@ class PeopleController < ApplicationController
     params.require(:person).permit(:name, :age, :mail)
   end
 
+  def edit
+    @msg = 'edit data.[id = ' + params[:id] + ']'
+    @person = Person.find(params[:id])
+  end
+
 end
