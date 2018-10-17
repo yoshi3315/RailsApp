@@ -7,7 +7,7 @@ class PeopleController < ApplicationController
 
   def show
     @msg = 'Indexed data.'
-    @data = Person.find(params[id])
+    @data = Person.find(params[:id])
   end
 
 end
