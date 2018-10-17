@@ -1,18 +1,18 @@
 <h1>People#index</h1>
 <p><%= @msg %></p>
 <table>
-  <form method='post' action='/people/add'>
+  <%= form_for(@person, url: { controller: 'people', action: 'create' }) do |form| %>
     <tr><th>Name</th>
-      <td><input type='text' name='name'></td>
+      <td><%= form.text_field :name %></td>
     </tr>
     <tr><th>Age</th>
-      <td><input type='text' name='age'></td>
+      <td><%= form.text_field :age %></td>
     </tr>
     <tr><th>Mail</th>
-      <td><input type='text' name='mail'></td>
+      <td><%= form.text_field :mail %></td>
     </tr>
     <tr><th></th>
-      <td><input type='submit'></td>
+      <td><%= form.submit '送信' %></td>
     </tr>
-  </form>
+  <% end %>
 </table>
