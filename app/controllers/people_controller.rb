@@ -14,8 +14,6 @@ class PeopleController < ApplicationController
     @msg = 'add new data.'
   end
   
-  protect_from_forgery
-  
   def create
     if request.post?
       obj = Person.create(
