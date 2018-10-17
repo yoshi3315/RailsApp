@@ -12,6 +12,7 @@ class PeopleController < ApplicationController
 
   def add
     @msg = 'add new data.'
+    @person = Person.new
   end
   
   def create
