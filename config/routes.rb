@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'dengonban/index'
   post 'dengonban/index'
   
+  get 'people/add'
+  post 'people/add', to: 'people#create'
+  
   get 'people/:id', to: 'people#show'
   
 end
