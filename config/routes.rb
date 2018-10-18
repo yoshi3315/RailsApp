@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get 'people/edit/:id', to: 'people#edit'
   patch 'people/edit/:id', to: 'people#update'
   
+  get 'people/delete/:id', to: 'people#delete'
+  
 end
