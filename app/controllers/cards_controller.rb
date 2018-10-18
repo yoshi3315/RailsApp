@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  layout 'cards'
+
   def index
   end
 
