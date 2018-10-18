@@ -16,9 +16,7 @@ class PeopleController < ApplicationController
   end
   
   def create
-    if request.post?
-      Person.create(person_params)
-    end
+    Person.create(person_params)
     redirect_to('/people')
   end
 
