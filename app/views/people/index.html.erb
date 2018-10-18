@@ -9,16 +9,7 @@
       <td><%= obj.id %></td>
       <td><%= link_to("#{obj.name}", person_path(obj)) %></td>
       <td><%= link_to('Edit', edit_person_path(obj)) %></td>
-      <td><%= link_to('Delete', person_path(obj)) %></td>
+      <td><%= link_to('Delete', person_path(obj), method: :delete, data: { confirm: 'このデータを削除しますか？' }) %></td>
     </tr>
   <% end %>
 </table>
-
-<script>
-  function delData(num) {
-    if (confirm('このデータを削除しますか？')) {
-      document.location = '/people/delete/' + num ;
-    }
-    return false;
-  }
-</script>

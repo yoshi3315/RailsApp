@@ -31,10 +31,10 @@ class PeopleController < ApplicationController
     redirect_to(people_path)
   end
 
-  def delete
-    obj = Person.find(params[:id])
-    obj.destroy
-    redirect_to('/people')
+  def destroy
+    @person = Person.find(params[:id])
+    @person.destroy
+    redirect_to(people_path)
   end
 
   private
