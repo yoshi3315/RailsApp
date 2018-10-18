@@ -10,7 +10,7 @@ class PeopleController < ApplicationController
     @data = Person.find(params[:id])
   end
 
-  def add
+  def new
     @msg = 'add new data.'
     @person = Person.new
   end
