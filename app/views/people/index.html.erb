@@ -8,8 +8,8 @@
     <tr>
       <td><%= obj.id %></td>
       <td><%= link_to("#{obj.name}", person_path(obj)) %></td>
-      <td><a href='/people/edit/<%= obj.id %>'>Edit</a></td>
-      <td><a href='javascript:delData(<%= obj.id %>);'>Delete</a></td>
+      <td><%= link_to('Edit', edit_person_path(obj)) %></td>
+      <td><%= link_to('Delete', person_path(obj)) %></td>
     </tr>
   <% end %>
 </table>

@@ -26,9 +26,9 @@ class PeopleController < ApplicationController
   end
 
   def update
-    obj = Person.find(params[:id])
-    obj.update(person_params)
-    redirect_to('/people')
+    @person = Person.find(params[:id])
+    @person.update(person_params)
+    redirect_to(people_path)
   end
 
   def delete
