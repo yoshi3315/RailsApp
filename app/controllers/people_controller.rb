@@ -17,7 +17,7 @@ class PeopleController < ApplicationController
   
   def create
     Person.create(person_params)
-    redirect_to('/people')
+    redirect_to(people_path)
   end
 
   def edit
