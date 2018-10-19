@@ -1,0 +1,23 @@
+<table>
+  <%= form_for(@card) do |form| %>
+    <tr><th>題名</th>
+      <td><%= form.text_field :title, { size: 40 } %></td>
+    </tr>
+    <tr><th>著者</th>
+      <td><%= form.text_field :author, { size: 40 } %></td>
+    </tr>
+    <tr><th>価格</th>
+      <td><%= form.text_field :price, { size: 10 } %></td>
+    </tr>
+    <tr><th>出版社</th>
+      <td><%= form.text_field :publisher, { size: 40 } %></td>
+    </tr>
+    <tr><th>コメント</th>
+      <td><%= form.text_field :memo, { cols: 40, rows: 10 } %></td>
+    </tr>
+    <tr><th></th>
+      <td><%= form.submit '送信' %></td>
+    </tr>
+  <% end %>
+</table>
+<p><%= link_to('※トップページに戻る', cards_path) %></p>
