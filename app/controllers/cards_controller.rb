@@ -25,4 +25,10 @@ class CardsController < ApplicationController
   def destroy
   end
   
+  private
+  #strong parameters リクエストパラメーターの検証（これがないとうまくいかないので注意）
+  def card_params
+    params.require(:card).permit(:title, :author, :price, :publisher, :memo)
+  end
+  
 end
