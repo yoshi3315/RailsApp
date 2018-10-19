@@ -35,6 +35,15 @@ class PeopleController < ApplicationController
     redirect_to(people_path)
   end
 
+  def find
+    @msg = 'please type search word...'
+    @people = Array.new
+    if request.post?
+      @person = Person.find(params[:search])
+      @people.push(@person)
+    end
+  end
+
   private
   def person_params
     params.require(:person).permit(:name, :age, :mail)
