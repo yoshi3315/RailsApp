@@ -23,10 +23,12 @@ class CardsController < ApplicationController
   end
   
   def update
+    @card = Card.find(params[:id])
     @card.update(card_params)
   end
 
   def destroy
+    @card = Card.find(params[:id])
     @card.destroy
   end
   
