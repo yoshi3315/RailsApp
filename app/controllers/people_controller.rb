@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  before_action :set_person, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @msg = 'Person data.'
@@ -7,41 +8,39 @@ class PeopleController < ApplicationController
 
   def show
     @msg = 'Indexed data.'
-    @data = Person.find(params[:id])
   end
 
-  def add
+  def new
     @msg = 'add new data.'
     @person = Person.new
   end
   
   def create
-    if request.post?
-      Person.create(person_params)
-    end
-    redirect_to('/people')
+    Person.create(person_params)
+    redirect_to(people_path)
   end
 
   def edit
     @msg = 'edit data.[id = ' + params[:id] + ']'
-    @person = Person.find(params[:id])
   end
 
   def update
-    obj = Person.find(params[:id])
-    obj.update(person_params)
-    redirect_to('/people')
+    @person.update(person_params)
+    redirect_to(people_path)
   end
 
-  def delete
-    obj = Person.find(params[:id])
-    obj.destroy
-    redirect_to('/people')
+  def destroy
+    @person.destroy
+    redirect_to(people_path)
   end
 
   private
   def person_params
     params.require(:person).permit(:name, :age, :mail)
+  end
+
+  def set_person
+    @person = Person.find(params[:id])
   end
 
 end
