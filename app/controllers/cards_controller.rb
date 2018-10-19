@@ -14,6 +14,7 @@ class CardsController < ApplicationController
   end
 
   def create
+    @card = Card.create(card_params)
   end
 
   def edit
