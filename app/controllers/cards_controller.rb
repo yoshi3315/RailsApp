@@ -1,12 +1,12 @@
 class CardsController < ApplicationController
   layout 'cards'
+  before_action :set_card, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @cards = Card.all
   end
 
   def show
-    @card = Card.find(params[:id])
   end
 
   def new
@@ -19,16 +19,13 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find(params[:id])
   end
   
   def update
-    @card = Card.find(params[:id])
     @card.update(card_params)
   end
 
   def destroy
-    @card = Card.find(params[:id])
     @card.destroy
   end
   
@@ -36,6 +33,10 @@ class CardsController < ApplicationController
   #strong parameters リクエストパラメーターの検証（これがないとうまくいかないので注意）
   def card_params
     params.require(:card).permit(:title, :author, :price, :publisher, :memo)
+  end
+  
+  def set_card
+    @card = Card.find(params[:id])
   end
   
 end
