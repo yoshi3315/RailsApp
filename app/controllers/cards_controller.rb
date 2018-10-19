@@ -22,6 +22,7 @@ class CardsController < ApplicationController
   end
   
   def update
+    @card.update(card_params)
   end
 
   def destroy
