@@ -16,6 +16,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.create(card_params)
     @card.save
+    go_back
   end
 
   def edit
@@ -23,10 +24,12 @@ class CardsController < ApplicationController
   
   def update
     @card.update(card_params)
+    go_back
   end
 
   def destroy
     @card.destroy
+    go_back
   end
   
   private
@@ -37,6 +40,10 @@ class CardsController < ApplicationController
   
   def set_card
     @card = Card.find(params[:id])
+  end
+  
+  def go_back
+    redirect_to cards_path
   end
   
 end
