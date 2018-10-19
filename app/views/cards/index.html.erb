@@ -10,7 +10,8 @@
       <td width='50%'><%= link_to(card.title, card_path(card)) %></td>
       <td><%= card.author %></td>
       <td width='40px'><%= link_to('編集', edit_card_path(card)) %></td>
-      <td width='40px'><%= link_to('削除', card_path(card), method: :delete, data: { confirm: "#{card.title}のデータを削除しますか？" }) %></td>
+      <td width='40px'><%= link_to('削除', "/cards/#{card.id}", method: :delete, data: { confirm: "#{card.title}のデータを削除しますか？" }) %></td>
+<!--      <td width='40px'><%= link_to('削除', card_path(card), method: :delete, data: { confirm: "#{card.title}のデータを削除しますか？" }) %></td> -->
     </tr>
   <% end %>
 </table>
