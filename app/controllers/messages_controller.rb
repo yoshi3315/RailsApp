@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
 　layout 'messages'
-
+  before_action :set_message, only: [ :show, :edit, :update, :destroy ]
+  
   def index
     @msg = 'Message data.'
     @messages = Message.all
@@ -8,7 +9,6 @@ class MessagesController < ApplicationController
 
   def show
     @msg = 'Indexed data.'
-    @message = find(params[:id])
   end
 
   def new
@@ -27,17 +27,14 @@ class MessagesController < ApplicationController
 
   def edit
     @msg = 'edit data.[id = ' + params[:id] + ']'
-    @message = find(params[:id])
   end
   
   def update
-    @message = find(params[:id])
     @message.update(message_params)
     redirect_to(messages_path)
   end
   
   def destroy
-    @message = find(params[:id])
     @message.destroy
     redirect_to(messages_path)
   end
@@ -45,6 +42,10 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:person_id, :title, :message)
+  end
+  
+  def set_message
+    @message = Message.find(params[:id])
   end
   
 end
