@@ -40,7 +40,9 @@ class PeopleController < ApplicationController
     @people = Array.new
     if request.post?
       f = '%' + params[:find] + '%'
-      @people = Person.where('name like ? or mail like ?', f, f)
+      result = Person.where('name like ? or mail like ?', f, f)
+      @people.push(result.first)
+      @people.push(result.last)
     end
   end
 
