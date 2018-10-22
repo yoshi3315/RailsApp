@@ -12,6 +12,8 @@ class MessagesController < ApplicationController
   end
 
   def new
+    @msg = 'Message data.'
+    @message = Message.new
   end
 
   def edit
