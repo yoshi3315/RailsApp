@@ -7,6 +7,8 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @msg = 'Indexed data.'
+    @message = find(params[:id])
   end
 
   def new
