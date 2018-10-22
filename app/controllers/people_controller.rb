@@ -23,6 +23,7 @@ class PeopleController < ApplicationController
     else
       @msg = '入力に問題があります。'
       render('add')
+    end
   end
 
   def edit
