@@ -15,7 +15,22 @@ class MessagesController < ApplicationController
     @msg = 'Message data.'
     @message = Message.new
   end
+  
+  def create
+    @message = Message.new(message_params)
+    if @message.save
+      redirect_to()
+    else
+      render('new')
+    end
+  end
 
   def edit
   end
+  
+  private
+  def message_params
+    params.require(:message).permit(:person_id, :title, :message)
+  end
+  
 end
