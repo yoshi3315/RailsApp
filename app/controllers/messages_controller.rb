@@ -26,6 +26,8 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @msg = 'edit data.[id = ' + params[:id] + ']'
+    @message = find(params[:id])
   end
   
   private
