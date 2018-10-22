@@ -36,6 +36,12 @@ class MessagesController < ApplicationController
     redirect_to(messages_path)
   end
   
+  def destroy
+    @message = find(params[:id])
+    @message.destroy
+    redirect_to(messages_path)
+  end
+  
   private
   def message_params
     params.require(:message).permit(:person_id, :title, :message)
