@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to(messages_path)
+      go_back
     else
       render('new')
     end
@@ -31,12 +31,12 @@ class MessagesController < ApplicationController
   
   def update
     @message.update(message_params)
-    redirect_to(messages_path)
+    go_back
   end
   
   def destroy
     @message.destroy
-    redirect_to(messages_path)
+    go_back
   end
   
   private
@@ -46,6 +46,10 @@ class MessagesController < ApplicationController
   
   def set_message
     @message = Message.find(params[:id])
+  end
+  
+  def go_back
+    redirect_to(messages_path)
   end
   
 end
