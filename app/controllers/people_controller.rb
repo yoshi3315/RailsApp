@@ -39,10 +39,8 @@ class PeopleController < ApplicationController
     @msg = 'please type search word...'
     @people = Array.new
     if request.post?
-      f = '%' + params[:find] + '%'
-      result = Person.where('name like ? or mail like ?', f, f)
-      @people.push(result.first)
-      @people.push(result.last)
+      f = params[:find].split(',')
+      @people = Person.where('name like ?', '%' + params[:find] + '%').order('age asc')
     end
   end
 
