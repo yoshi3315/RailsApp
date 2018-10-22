@@ -1,0 +1,24 @@
+<p><%= @msg %></p>
+<% if @message.errors.any? %>
+  <ul>
+    <% @message.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<table>
+  <%= form_for(@message) do |form| %>
+    <tr><th>person ID</th>
+      <td><%= form.text_field :person_id %></td>
+    </tr>
+    <tr><th>title</th>
+      <td><%= form.text_field :title %></td>
+    </tr>
+    <tr><th>message</th>
+      <td><%= form.text_area :message, { cols: 30, rows: 3 } %></td>
+    </tr>
+    <tr><th></th>
+      <td><%= form.submit '送信' %></td>
+    </tr>
+  <% end %>
+</table>
