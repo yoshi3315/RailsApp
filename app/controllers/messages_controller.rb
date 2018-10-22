@@ -30,6 +30,12 @@ class MessagesController < ApplicationController
     @message = find(params[:id])
   end
   
+  def update
+    @message = find(params[:id])
+    @message.update(message_params)
+    redirect_to(messages_path)
+  end
+  
   private
   def message_params
     params.require(:message).permit(:person_id, :title, :message)
