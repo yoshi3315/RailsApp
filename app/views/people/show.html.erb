@@ -16,7 +16,7 @@
     </tr>
     <tr><th>Message</th>
       <td>
-        <% if @person.message != nil %>
+        <% if @person.message %>
           <% @person.message.each do |message| %>
             <%= message.title %>
           <% end %>
