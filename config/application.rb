@@ -13,3 +13,9 @@ module Railsapp
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+# デフォルトのlocaleを日本語(:ja)にする
+config.i18n.default_locale = :ja
+
+# 翻訳ファイルのディレクトを追加する場合は、次の行のコメントを外しパスを追加してください。
+# config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]

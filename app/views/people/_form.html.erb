@@ -1,5 +1,10 @@
 <p><%= @msg %></p>
 <% if @person.errors.any? %>
+<% p "=============="%>
+<% p "=============="%>
+<% p @person.errors %>
+<% p "=============="%>
+<% p "=============="%>
   <ul>
     <% @person.errors.full_messages.each do |message| %>
       <li><%= message %></li>
