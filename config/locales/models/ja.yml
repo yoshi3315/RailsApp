@@ -1,0 +1,11 @@
+ja:
+  activerecord: &activerecord
+    models:
+      person:
+    attributes:
+      person:
+        name: "名前"
+        age: "年齢"
+        mail: "メールアドレス"
+  activemodel:
+  <<: activerecord
