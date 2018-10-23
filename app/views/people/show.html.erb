@@ -15,7 +15,13 @@
       <td><%= @person.mail %></td>
     </tr>
     <tr><th>Message</th>
-      <td><%= @person.message != nil ? @person.message.title : 'none'  %></td>
+      <td>
+        <% if @person.message != nil %>
+          <% @person.message.each do |message| %>
+            <%= message.title %>
+          <% end %>
+        <% end %>
+      </td>
     </tr>
   </table>
 </pre>
