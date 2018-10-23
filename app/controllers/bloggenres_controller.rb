@@ -17,5 +17,13 @@ class BloggenresController < ApplicationController
   end
 
   def edit
+    @bloggenre = Bloggenre.find(params[:id])
   end
+  
+  def update
+    if @bloggenre.update(bloggenre_params)
+      redirect_to('/bloggenres')
+    end
+  end
+  
 end
