@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
   
-  has_many :message
+  has_many :messages
 
   validates :name, presence: true
   validates :age, numericality: true
