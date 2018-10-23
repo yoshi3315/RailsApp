@@ -17,8 +17,12 @@ class PeopleController < ApplicationController
   end
   
   def create
-    Person.create(person_params)
-    redirect_to(people_path)
+    @person = Person.new(person_params)
+    if @person.save
+      redirect_to(people_path)
+    else
+      render('new')
+    end
   end
 
   def edit

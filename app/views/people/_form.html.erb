@@ -1,4 +1,11 @@
 <p><%= @msg %></p>
+<% if @person.errors.any? %>
+  <ul>
+    <% @person.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <table>
   <%= form_for(@person) do |form| %>
     <tr><th>Name</th>
