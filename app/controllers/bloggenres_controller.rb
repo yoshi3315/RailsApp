@@ -26,4 +26,9 @@ class BloggenresController < ApplicationController
     end
   end
   
+  private
+  def bloggenre_params
+    params.require(:bloggenre).permit(:name, :memo)
+  end
+  
 end
