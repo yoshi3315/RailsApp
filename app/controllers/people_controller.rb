@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  layout 'people'
   before_action :set_person, only: [ :show, :edit, :update, :destroy ]
 
   def index
@@ -34,13 +35,23 @@ class PeopleController < ApplicationController
     redirect_to(people_path)
   end
 
+  def find
+    @msg = 'please type search word...'
+    @people = Array.new
+    if request.post?
+      f = params[:find].split(',')
+      @people = Person.all.limit(f[0]).offset(f[1])
+    else
+    @people = Person.all
+    end
+  end
+
   private
   def person_params
     params.require(:person).permit(:name, :age, :mail)
   end
 
   def set_person
-    p 123
     @person = Person.find(params[:id])
   end
 
