@@ -1,7 +1,7 @@
 class BloggenresController < ApplicationController
   
   layout 'bloggenres'
-  
+
   def index
     @bloggenres = Bloggenre.all
   end
@@ -12,7 +12,7 @@ class BloggenresController < ApplicationController
   
   def create
     if @bloggenre = Bloggenre.create(bloggenre_params)
-      redirect_to('/bloggenres')
+      go_back
     end
   end
 
@@ -22,13 +22,17 @@ class BloggenresController < ApplicationController
   
   def update
     if @bloggenre.update(bloggenre_params)
-      redirect_to('/bloggenres')
+      go_back
     end
   end
   
   private
   def bloggenre_params
     params.require(:bloggenre).permit(:name, :memo)
+  end
+  
+  def go_back
+    redirect_to('/bloggenres')
   end
   
 end
