@@ -1,14 +1,13 @@
 class BlogconfigsController < ApplicationController
   
   layout 'blogconfigs'
+  before_action :set_blogconfig
 
   def index
-    @blogconfigs = Blogconfig.find(1)
   end
 
   def edit
-    @blogconfigs = Blogconfig.find(1)
-    if @blogconfigs.update(blogconfig_params)
+    if @blogconfig.update(blogconfig_params)
       redirect_to('/blogconfigs')
     end
   end
@@ -16,6 +15,10 @@ class BlogconfigsController < ApplicationController
   private
   def blogconfig_params
     params.require(:blogconfig).permit(:title, :subtitle, :stylename)
+  end
+  
+  def set_blogconfig
+    @blogconfig = Blogconfig.find(1)
   end
   
 end
