@@ -30,8 +30,11 @@ class MessagesController < ApplicationController
   end
   
   def update
-    @message.update(message_params)
-    go_back
+    if @message.update(message_params)
+      go_back
+    else
+      render('edit')
+    end
   end
   
   def destroy
