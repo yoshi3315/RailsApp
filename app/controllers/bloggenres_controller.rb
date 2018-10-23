@@ -9,6 +9,12 @@ class BloggenresController < ApplicationController
   def new
     @bloggenre = Bloggenre.new
   end
+  
+  def create
+    if @bloggenre = Bloggenre.create(bloggenre_params)
+      redirect_to('/bloggenres')
+    end
+  end
 
   def edit
   end
