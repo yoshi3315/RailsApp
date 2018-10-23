@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'bloggenres/index'
+
+  get 'bloggenres/new'
+
+  get 'bloggenres/edit'
+
   get 'blogconfigs/index'
 
   get 'blogconfigs/edit'
