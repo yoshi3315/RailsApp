@@ -10,5 +10,6 @@ ja:
       message:
         title: "タイトル"
         message: "メッセージ"
+        person: "ユーザー名"
   activemodel:
   <<: activerecord
