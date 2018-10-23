@@ -5,7 +5,6 @@
     <th>Id</th><th>Name</th><th colspan='2'></th>
   </tr>
   <% @data.each do |obj| %>
-    <% binding.pry %>
     <tr>
       <td><%= obj.id %></td>
       <td><%= link_to("#{obj.name}", person_path(obj)) %></td>
