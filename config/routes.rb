@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'blogconfigs/index'
+
+  get 'blogconfigs/edit'
+
   get 'messages/index'
 
   get 'messages/show'
