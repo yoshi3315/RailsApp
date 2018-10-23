@@ -7,6 +7,8 @@ class BlogpostsController < ApplicationController
   end
 
   def new
+    @blogpost = Blogpost.new
+    @bloggenres = Bloggenre.all
   end
 
   def edit
