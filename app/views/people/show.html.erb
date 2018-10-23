@@ -14,5 +14,14 @@
     <tr><th>Mail</th>
       <td><%= @person.mail %></td>
     </tr>
+    <tr><th>Message</th>
+      <td>
+        <% if @person.messages %>
+          <% @person.messages.each do |message| %>
+            <%= message.title %>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
   </table>
 </pre>

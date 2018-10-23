@@ -7,5 +7,9 @@ ja:
         name: "名前"
         age: "年齢"
         mail: "メールアドレス"
+      message:
+        title: "タイトル"
+        message: "メッセージ"
+        person: "ユーザー名"
   activemodel:
   <<: activerecord

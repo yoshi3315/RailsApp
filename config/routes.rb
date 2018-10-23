@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+
+  get 'messages/show'
+
+  get 'messages/new'
+
+  get 'messages/edit'
+
   get 'helo', to: 'helo#index'
   post 'helo', to: 'helo#index'
 
@@ -11,5 +19,7 @@ Rails.application.routes.draw do
   resources :people
   
   resources :cards
+  
+  resources :messages
   
 end
