@@ -11,6 +11,12 @@ class BlogpostsController < ApplicationController
     @bloggenres = Bloggenre.all
   end
 
+  def create
+    if @blogpost = Blogpost.create(bloggenre_params)
+      redirect_to('/blogposts')
+    end
+  end
+
   def edit
   end
 
