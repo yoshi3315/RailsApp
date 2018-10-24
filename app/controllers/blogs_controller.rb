@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
 
   def genre
     @bloggenre = Bloggenre.find(params[:id])
-    @blogpost = Blogpost
+    @blogposts = Blogpost
       .where('bloggenre_id = ?', params[:id])
       .order('created_at desc')
       .offset(page_size * @page_num)
