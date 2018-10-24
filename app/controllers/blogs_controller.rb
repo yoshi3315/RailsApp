@@ -4,7 +4,9 @@ class BlogsController < ApplicationController
   before_action :set_page_num, only: [ :index, :genre ]
   
   def index
-    @blogposts = Blogpost.all.order('created_at desc')
+    @blogposts = Blogpost
+      .all
+      .order('created_at desc')
       .offset(page_size * @page_num)
       .limit(page_size)
     set_blogconfig
@@ -12,7 +14,8 @@ class BlogsController < ApplicationController
 
   def genre
     @bloggenre = Bloggenre.find(params[:id])
-    @blogpost = Blogpost.where('bloggenre_id = ?', params[:id])
+    @blogpost = Blogpost
+      .where('bloggenre_id = ?', params[:id])
       .order('created_at desc')
       .offset(page_size * @page_num)
       .limit(page_size)
