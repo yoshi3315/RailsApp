@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railsapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'blogs', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag @blogconfig.stylename, 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'blogs', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header id='header'>
+      <h1><%= link_to("#{@blogconfig.title}", '/blogs') %></h1>
+      <h2><%= @blogconfig.subtitle %></h2>
+    </header>
+    <hr>
+    <div id='side'>
+      <% Bloggenre.all.each do |bloggenre|%>
+        <p><%= link_to("#{bloggenre.name}", "/blogs/genre/#{bloggenre.id}") %></p>
+      <% end %>
+    </div>
+    <main id='main'>
+      <%= yield %>  
+    </main>
+  </body>
+</html>
