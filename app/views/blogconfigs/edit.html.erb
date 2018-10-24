@@ -1,2 +1,25 @@
 <h1>Blogconfigs#edit</h1>
-<p>Find me in app/views/blogconfigs/edit.html.erb</p>
+<p>※ブログ設定の編集</p>
+<% if @blogconfig.errors.any? %>
+  <ul>
+    <% @blogconfig.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<table>
+  <%= form_for(@blogconfig) do |form| %>
+    <tr><th>Title</th>
+      <td><%= form.text_field :title %></td>
+    </tr>
+    <tr><th>Subtitle</th>
+      <td><%= form.text_field :subtitle %></td>
+    </tr>
+    <tr><th>Style Name</th>
+      <td><%= form.text_field :stylename %></td>
+    </tr>
+    <tr><th></th>
+      <td><%= form.submit '送信' %></td>
+    </tr>
+  <% end %>
+</table>
