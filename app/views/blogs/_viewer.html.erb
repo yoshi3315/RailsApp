@@ -1,5 +1,5 @@
 <% @blogposts.each do |blogpost| %>
-  <h3 class='top_title'><%= link_to("#{blogpost.title}", "/blogs/show/#{blogpost.id}") %></h3>
+  <h3 class='top_title'><%= link_to("#{blogpost.title}", "/blogs/#{blogpost.id}/show") %></h3>
   <p class='top_read'><%= blogpost.read %><span class='top_created'>(<%= blogpost.created_at %>)</span></p>
   <hr>
 <% end %>
