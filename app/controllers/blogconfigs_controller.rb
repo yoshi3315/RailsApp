@@ -7,6 +7,9 @@ class BlogconfigsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
     if @blogconfig.update(blogconfig_params)
       redirect_to('/blogconfigs')
     end
