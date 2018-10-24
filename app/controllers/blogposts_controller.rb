@@ -1,7 +1,7 @@
 class BlogpostsController < ApplicationController
 
   layout 'blogposts'
-  before_action :set_blogpost, only: [ :edit, :delete, :destroy ]
+  before_action :set_blogpost, only: [ :edit, :update, :delete, :destroy ]
   before_action :set_bloggenres, only: [ :new, :edit ]
   
   def index
