@@ -7,7 +7,7 @@
   <% @bloggenres.each do |bloggenre| %>
     <tr>
       <td><%= bloggenre.id %></td>
-      <td><%= bloggenre.name %> %></td>
+      <td><%= bloggenre.name %></td>
       <td><%= bloggenre.memo %></td>
       <td><%= link_to('Edit', "/bloggenres/#{bloggenre.id}/edit") %></td>
     </tr>

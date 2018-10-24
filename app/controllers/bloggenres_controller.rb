@@ -1,6 +1,7 @@
 class BloggenresController < ApplicationController
   
   layout 'bloggenres'
+  before_action :set_bloggenre, only: [ :edit, :update ]
 
   def index
     @bloggenres = Bloggenre.all
@@ -17,7 +18,6 @@ class BloggenresController < ApplicationController
   end
 
   def edit
-    @bloggenre = Bloggenre.find(params[:id])
   end
   
   def update
@@ -29,6 +29,10 @@ class BloggenresController < ApplicationController
   private
   def bloggenre_params
     params.require(:bloggenre).permit(:name, :memo)
+  end
+
+  def set_bloggenre
+    @bloggenre = Bloggenre.find(params[:id])
   end
   
   def go_back

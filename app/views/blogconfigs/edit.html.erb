@@ -8,7 +8,7 @@
   </ul>
 <% end %>
 <table>
-  <%= form_for(@blogconfig, url:{ controller: 'blogconfigs', action: 'update' } ) do |form| %>
+  <%= form_for(@blogconfig, url:{ controller: 'blogconfigs', action: 'update' }) do |form| %>
     <tr><th>Title</th>
       <td><%= form.text_field :title %></td>
     </tr>
