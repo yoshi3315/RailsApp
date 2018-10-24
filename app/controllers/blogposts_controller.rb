@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
 
-  layout 'blogposts'
+  layout 'cards'
   before_action :set_blogpost, only: [ :edit, :update, :delete, :destroy ]
   before_action :set_bloggenres, only: [ :new, :edit ]
   

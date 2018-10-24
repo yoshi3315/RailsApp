@@ -1,6 +1,6 @@
 class BloggenresController < ApplicationController
   
-  layout 'bloggenres'
+  layout 'cards'
   before_action :set_bloggenre, only: [ :edit, :update ]
 
   def index
