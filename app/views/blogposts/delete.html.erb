@@ -14,4 +14,4 @@
     <td><%= @blogpost.content %></td>
   </tr>
 </table>
-<%= link_to('Delete', blogpost_path, method: :delete) %>
+<%= link_to('Delete', "/blogposts/#{@blogpost.id}/destroy", method: :delete) %>

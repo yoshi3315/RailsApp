@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'blogs/:page', to: 'blogs#index'
 
   get 'blogposts/:id/delete', to: 'blogposts#delete'
+  delete 'blogposts/:id/destroy', to: 'blogposts#destroy'
   resources :blogposts
 
   get 'bloggenres', to: 'bloggenres#index'
