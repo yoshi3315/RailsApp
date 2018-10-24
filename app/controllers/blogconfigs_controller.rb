@@ -1,6 +1,6 @@
 class BlogconfigsController < ApplicationController
   
-  layout 'blogconfigs'
+  layout 'cards'
   before_action :set_blogconfig
 
   def index
