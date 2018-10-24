@@ -1,0 +1,20 @@
+<% if @bloggenre.errors.any? %>
+  <ul>
+    <% @bloggenre.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<table>
+  <%= form_for(@bloggenre) do |form| %>
+    <tr><th>name</th>
+      <td><%= form.text_field :name %></td>
+    </tr>
+    <tr><th>memo</th>
+      <td><%= form.text_field :memo %></td>
+    </tr>
+    <tr><th></th>
+      <td><%= form.submit '送信' %></td>
+    </tr>
+  <% end %>
+</table>
