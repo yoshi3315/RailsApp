@@ -11,7 +11,7 @@
       <td><%= blogpost.read %></td>
       <td><%= blogpost.bloggenre.name %></td>
       <td><%= link_to('Edit', edit_blogpost_path(blogpost)) %></td><!--blogpostのパスはとりあえずprefixで書いておく-->
-      <td><%= link_to('Delete', blogpost_path(blogpost), method: :delete, data: { confirm: "#{blogpost.title}のデータを削除しますか？" }) %></td> 
+      <td><%= link_to('Delete', blogpost_path(blogpost)) %></td>
     </tr>
   <% end %>
 </table>
