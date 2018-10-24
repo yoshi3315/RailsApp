@@ -18,6 +18,8 @@ class BlogpostsController < ApplicationController
   end
 
   def edit
+    @blogpost = Blogpost.find(params[:id])
+    @bloggenres = Bloggenre.all
   end
 
   def delete
