@@ -1,13 +1,2 @@
 <h2>※「<%= @bloggenre.name %>」の投稿</h2>
-<% @blogposts.each do |blogpost| %>
-  <h3 class='top_title'><%= link_to("#{blogpost.title}", "/blogs/show/#{blogpost.id}") %></h3>
-  <p class='top_read'><%= blogpost.read %><span class='top_created'>(<%= blogpost.created_at %>)</span></p>
-  <hr>
-<% end %>
-<div class='navigate'>
-  <% if @page_num > 0 %>
-    <%= link_to('＜＜前のページ', "/blogs/#{@page_num - 1}") %>
-  <% end %>
-  <span> </span>
-  <%= link_to('次のページ＞＞', "/blogs/#{@page_num + 1}") %>
-</div>
+<%= render 'viewer' %>
