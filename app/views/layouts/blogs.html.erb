@@ -17,7 +17,7 @@
     <hr>
     <div id='side'>
       <% Bloggenre.all.each do |bloggenre|%>
-        <p><%= link_to("#{bloggenre.name}", "/blogs/genre/#{bloggenre.id}") %></p>
+        <p><%= link_to("#{bloggenre.name}", "/blogs/#{bloggenre.id}/genre") %></p>
       <% end %>
     </div>
     <main id='main'>
