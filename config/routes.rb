@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :mycontacts
   get 'blogs', to: 'blogs#index'
   get 'blogs/:id/genre', to: 'blogs#genre'
   get 'blogs/:id/:page/genre', to: 'blogs#genre'
