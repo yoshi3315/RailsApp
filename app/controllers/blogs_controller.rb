@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+  
+  layout 'blogs'
+  
   def index
   end
 
