@@ -12,7 +12,7 @@ class BlogpostsController < ApplicationController
   end
 
   def create
-    if @blogpost = Blogpost.create(bloggenre_params)
+    if @blogpost = Blogpost.create(blogpost_params)
       redirect_to('/blogposts')
     end
   end
@@ -23,7 +23,7 @@ class BlogpostsController < ApplicationController
   end
   
   def update
-    if @blogpost.update(bloggenre_params)
+    if @blogpost.update(blogpost_params)
       redirect_to('/blogposts')
     end
   end
@@ -32,6 +32,11 @@ class BlogpostsController < ApplicationController
     @blogpost = Blogpost.find(params[:id])
     @blogpost.destroy
     redirect_to('/blogposts')
+  end
+  
+  private
+  def blogpost_params
+    params.require(:blogpost).permit(:title, :read, :content, :bloggenre_id)
   end
 
 end
