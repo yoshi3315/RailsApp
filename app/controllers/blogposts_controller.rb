@@ -21,6 +21,12 @@ class BlogpostsController < ApplicationController
     @blogpost = Blogpost.find(params[:id])
     @bloggenres = Bloggenre.all
   end
+  
+  def update
+    if @blogpost.update(bloggenre_params)
+      redirect_to('/blogposts')
+    end
+  end
 
   def delete
   end
