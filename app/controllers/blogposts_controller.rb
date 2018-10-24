@@ -28,6 +28,10 @@ class BlogpostsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @blogpost = Blogpost.find(params[:id])
+    @blogpost.destroy
+    redirect_to('/blogposts')
   end
+
 end
