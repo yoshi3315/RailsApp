@@ -12,6 +12,8 @@ class BlogconfigsController < ApplicationController
   def update
     if @blogconfig.update(blogconfig_params)
       redirect_to('/blogconfigs')
+    else
+      render('edit')
     end
   end
 

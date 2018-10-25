@@ -1,7 +1,7 @@
 class BloggenresController < ApplicationController
   
   layout 'cards'
-  before_action :set_bloggenre, only: [ :edit, :update ]
+  before_action :set_bloggenre, only: [:edit, :update]
 
   def index
     @bloggenres = Bloggenre.all
@@ -12,8 +12,11 @@ class BloggenresController < ApplicationController
   end
   
   def create
-    if @bloggenre = Bloggenre.create(bloggenre_params)
+    @bloggenre = Bloggenre.new(bloggenre_params)
+    if @bloggenre.save
       go_back
+    else
+      render('new')
     end
   end
 
@@ -23,6 +26,8 @@ class BloggenresController < ApplicationController
   def update
     if @bloggenre.update(bloggenre_params)
       go_back
+    else
+      render('edit')
     end
   end
   
@@ -36,7 +41,7 @@ class BloggenresController < ApplicationController
   end
   
   def go_back
-    redirect_to('/bloggenres')
+    redirect_to(bloggenres_path)
   end
   
 end
