@@ -36,7 +36,7 @@ class BloggenresController < ApplicationController
   end
   
   def go_back
-    redirect_to('/bloggenres')
+    redirect_to(bloggenres_path)
   end
   
 end
