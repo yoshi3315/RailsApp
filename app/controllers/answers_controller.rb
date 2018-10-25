@@ -26,11 +26,18 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
+    end_counter = 10
     @answer = Answer.new(answer_params)
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        num = Answer.where('question_id = ?', @answer.question_id).count
+        if num >= end_counter
+          q = Question.find(@answer.question_id)
+          q.finished = true
+          q.save
+        end
+        format.html { redirect_to questions_path, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
