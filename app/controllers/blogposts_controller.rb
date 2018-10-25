@@ -1,8 +1,8 @@
 class BlogpostsController < ApplicationController
 
   layout 'cards'
-  before_action :set_blogpost, only: [ :edit, :update, :delete, :destroy ]
-  before_action :set_bloggenres, only: [ :new, :edit ]
+  before_action :set_blogpost, only: [:edit, :update, :delete, :destroy]
+  before_action :set_bloggenres, only: [:new, :edit]
   
   def index
     @blogposts = Blogpost.all.order('created_at desc')

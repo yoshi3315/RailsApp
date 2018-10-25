@@ -1,7 +1,7 @@
 class BloggenresController < ApplicationController
   
   layout 'cards'
-  before_action :set_bloggenre, only: [ :edit, :update ]
+  before_action :set_bloggenre, only: [:edit, :update]
 
   def index
     @bloggenres = Bloggenre.all
