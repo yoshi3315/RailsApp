@@ -12,8 +12,11 @@ class BloggenresController < ApplicationController
   end
   
   def create
-    if @bloggenre = Bloggenre.create(bloggenre_params)
+    @bloggenre = Bloggenre.new(bloggenre_params)
+    if @bloggenre.save
       go_back
+    else
+      render('new')
     end
   end
 
@@ -23,6 +26,8 @@ class BloggenresController < ApplicationController
   def update
     if @bloggenre.update(bloggenre_params)
       go_back
+    else
+      render('edit')
     end
   end
   
