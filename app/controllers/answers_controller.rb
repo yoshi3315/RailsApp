@@ -4,12 +4,13 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Answer.all
+    redirect_to questions_path
   end
 
   # GET /answers/1
   # GET /answers/1.json
   def show
+    redirect_to questions_path
   end
 
   # GET /answers/new
@@ -19,6 +20,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
+    redirect_to questions_path
   end
 
   # POST /answers
@@ -40,25 +42,13 @@ class AnswersController < ApplicationController
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
-    respond_to do |format|
-      if @answer.update(answer_params)
-        format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @answer }
-      else
-        format.html { render :edit }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to questions_path
   end
 
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
-    @answer.destroy
-    respond_to do |format|
-      format.html { redirect_to answers_url, notice: 'Answer was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to questions_path
   end
 
   private
