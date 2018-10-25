@@ -1,6 +1,6 @@
 class Bloggenre < ApplicationRecord
   
-  has_many :blogpost
+  has_many :blogposts
   
   validates :name, presence: true
   
