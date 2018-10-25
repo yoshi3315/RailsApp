@@ -25,10 +25,10 @@
 
 <h2>※これまで寄せられた回答</h2>
 
-<% if @question.answer.count == 0 %>
+<% if @question.answers.count == 0 %>
   <p class='answer'>まだありません。</p>
 <% else %>
-  <% @question.answer.reverse_each do |re| %>
+  <% @question.answers.reverse_each do |re| %>
     <p class='answer'>
       <%= re.content + '（' + re.name + '）' %>
     </p>

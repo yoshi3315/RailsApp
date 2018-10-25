@@ -37,7 +37,7 @@ class AnswersController < ApplicationController
           q.finished = true
           q.save
         end
-        format.html { redirect_to questions_path, notice: 'Answer was successfully created.' }
+        format.html { redirect_to question_path(@answer.question_id), notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
