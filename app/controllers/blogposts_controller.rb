@@ -13,8 +13,12 @@ class BlogpostsController < ApplicationController
   end
 
   def create
-    if @blogpost = Blogpost.create(blogpost_params)
+    @blogpost = Blogpost.new(blogpost_params)
+    if @blogpost.save
       go_back
+    else
+      set_bloggenres
+      render('new')
     end
   end
 
@@ -24,6 +28,9 @@ class BlogpostsController < ApplicationController
   def update
     if @blogpost.update(blogpost_params)
       go_back
+    else
+      set_bloggenres
+      render('edit')
     end
   end
 
@@ -49,7 +56,7 @@ class BlogpostsController < ApplicationController
   end
 
   def go_back
-    redirect_to('/blogposts')
+    redirect_to(blogposts_path)
   end
 
 end
