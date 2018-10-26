@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :questionary_results
   
+  get 'questionary_choices/:id/new', to: 'questionary_choices#new'
   resources :questionary_choices
   
   get 'questionary_items/:id/new', to: 'questionary_items#new'
