@@ -15,6 +15,8 @@ class QuestionaryChoicesController < ApplicationController
   # GET /questionary_choices/new
   def new
     @questionary_choice = QuestionaryChoice.new
+    @questionary_choice.questionary_item_id = params[:id]
+    @questionary_item = QuestionaryItem.find(params[:id])
   end
 
   # GET /questionary_choices/1/edit
