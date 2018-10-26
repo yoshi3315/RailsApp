@@ -11,6 +11,24 @@ class QuestionariesController < ApplicationController
   # GET /questionaries/1.json
   def show
   end
+  
+  def sendform
+    id = params[:id]
+    result = 'question_id:' + id
+    for i in 1..100
+      str = 'r' + i.to_s
+      if params[str] == nil
+        result += ',' + str + ':0'
+      else
+        result += ',' + str + ':' + params[str]
+      end
+    end
+    @questionary_result = QuestionaryResult.new
+    @questionary_result.questionary_id = id
+    @questionary_result.result = result
+    @questionary_result.save!
+    redirect_to questionaries_path
+  end
 
   # GET /questionaries/new
   def new
