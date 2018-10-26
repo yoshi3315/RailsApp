@@ -11,21 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :question_id %>
-    <%= f.number_field :question_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
+  <%= f.hidden_field :question_id, { value: answer.question_id } %>
+  
   <div class="field">
     <%= f.label :name %>
     <%= f.text_area :name %>
   </div>
 
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, { cols: 40, rows: 5 } %>
+  </div>
+
+  <br>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
