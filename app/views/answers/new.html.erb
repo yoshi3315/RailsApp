@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>質問と回答</h1>
+
+<div class='question'>
+  <h2 class='title'>
+    <%= @answer.question.title %>
+  </h2>
+  <p class='content'>
+    <%= @answer.question.content %>
+  </p>
+  <p class='q_name'>
+    <%= @answer.question.name %>
+  </p>
+  <span class="<%= @answer.question.finished ? 'finished' : 'not_finished' %>">
+    <%= @answer.question.finished ? '終了' : '受付中' %>
+  </span>
+</div>
+
+<%= render 'form', answer: @answer %>
+
+<%= link_to 'Back', answers_path %>
