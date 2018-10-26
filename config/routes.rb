@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
 
   resources :questionary_results
+  
   resources :questionary_choices
+  
+  get 'questionary_items/:id/new', to: 'questionary_items#new'
   resources :questionary_items
+  
   resources :questionaries
+  
   resources :answers
+  
   resources :questions
+  
   resources :mycontacts
+  
   get 'blogs', to: 'blogs#index'
   get 'blogs/:id/genre', to: 'blogs#genre'
   get 'blogs/:id/:page/genre', to: 'blogs#genre'
