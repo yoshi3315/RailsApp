@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    @answer = Answer.new
+    redirect_to questions_path
   end
 
   # GET /answers/1/edit
