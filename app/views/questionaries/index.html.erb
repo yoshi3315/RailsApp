@@ -20,7 +20,7 @@
           <% if questionary.deadline - dx > DateTime.now %>
             <span class='not_finished'>受付中</span></td>
             <td>
-              <%= link_to('アンケートを表示', questionary_path ) %>
+              <%= link_to('アンケートを表示', questionary_path(questionary)) %>
             </td>
           <% else %>
             <span class='finished'>受付終了</span></td>
