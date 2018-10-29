@@ -1,0 +1,22 @@
+<h1><%= @questionary.title %></h1>
+
+<p></p>
+
+<table>
+  <tr>
+    <th>質問ID</th>
+    <th>集計</th>
+  </tr>
+  <% @calc.each do |ky, vl| %>
+    <tr>
+      <td><%= ky %></td>
+    </tr>
+    <table>
+      <tr>
+        <% for v in vl %>
+          <td><%= v.to_i %></td>
+        <% end %>
+      </tr>
+    </table>
+  <% end %>
+</table>
