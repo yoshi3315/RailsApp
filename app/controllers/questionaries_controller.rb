@@ -1,5 +1,5 @@
 class QuestionariesController < ApplicationController
-  before_action :set_questionary, only: [:show, :edit, :update, :destroy]
+  before_action :set_questionary, only: [:show]
 
   # GET /questionaries
   # GET /questionaries.json
@@ -35,9 +35,6 @@ class QuestionariesController < ApplicationController
     @questionary = Questionary.new
   end
 
-  # GET /questionaries/1/edit
-  def edit
-  end
 
   # POST /questionaries
   # POST /questionaries.json
@@ -52,30 +49,6 @@ class QuestionariesController < ApplicationController
         format.html { render :new }
         format.json { render json: @questionary.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /questionaries/1
-  # PATCH/PUT /questionaries/1.json
-  def update
-    respond_to do |format|
-      if @questionary.update(questionary_params)
-        format.html { redirect_to @questionary, notice: 'Questionary was successfully updated.' }
-        format.json { render :show, status: :ok, location: @questionary }
-      else
-        format.html { render :edit }
-        format.json { render json: @questionary.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /questionaries/1
-  # DELETE /questionaries/1.json
-  def destroy
-    @questionary.destroy
-    respond_to do |format|
-      format.html { redirect_to questionaries_url, notice: 'Questionary was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
