@@ -15,7 +15,7 @@ class QuestionariesController < ApplicationController
   def sendform
     id = params[:id]
     result = 'question_id:' + id
-    for i in 1..100
+    (1..100).each do |i|
       str = 'r' + i.to_s
       if params[str] == nil
         result += ',' + str + ':0'
