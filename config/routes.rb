@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'questionary_results', to: 'questionary_results#calc'
   resources :questionary_results
   
   get 'questionary_choices/:id/new', to: 'questionary_choices#new'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   get 'questionary_items/:id/new', to: 'questionary_items#new'
   resources :questionary_items
   
+  post 'questionaries/:id', to: 'questionaries#sendform'
   resources :questionaries
   
   resources :answers
