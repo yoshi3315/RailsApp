@@ -12,19 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <div class="field">
     <%= f.label :value %>
     <%= f.number_field :value %>
   </div>
-
+  
   <div class="field">
-    <%= f.label :questionary_item_id %>
-    <%= f.number_field :questionary_item_id %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
   </div>
+  
+  <%= f.hidden_field :questionary_item_id, { value: @questionary_choice.questionary_item_id } %>
 
   <div class="actions">
     <%= f.submit %>
