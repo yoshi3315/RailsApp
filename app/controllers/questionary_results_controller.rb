@@ -4,12 +4,14 @@ class QuestionaryResultsController < ApplicationController
   # GET /questionary_results
   # GET /questionary_results.json
   def index
-    @questionary_results = QuestionaryResult.all
+    @questionaries = Questionary.all
   end
 
   # GET /questionary_results/1
   # GET /questionary_results/1.json
   def show
+    @questionary = Questionary.find(params[:id])
+    @questionary_results = QuestionaryResult.where('questionary_id = ?', params[:id])
   end
 
   # GET /questionary_results/new
