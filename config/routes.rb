@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'questionary_results/:id/calc', to: 'questionary_results#calc'
-  resources :questionary_results
+  resources :questionary_results, only: [:index, :show]
   
   get 'questionary_choices/:id/new', to: 'questionary_choices#new'
   resources :questionary_choices, only: [:create]
