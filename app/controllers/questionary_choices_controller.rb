@@ -11,6 +11,8 @@ class QuestionaryChoicesController < ApplicationController
   # POST /questionary_choices.json
   def create
     @questionary_choice = QuestionaryChoice.new(questionary_choice_params)
+    @questionary_item = QuestionaryItem.find(@questionary_choice.questionary_item_id)
+    @questionary = Questionary.find(@questionary_item.questionary_id)
 
     respond_to do |format|
       if @questionary_choice.save
