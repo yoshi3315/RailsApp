@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'ajax/index'
+
   get 'questionary_results/:id/calc', to: 'questionary_results#calc'
   resources :questionary_results, only: [:index, :show]
   
