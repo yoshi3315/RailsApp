@@ -11,10 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :value %>
-    <%= f.number_field :value %>
-  </div>
+  <%= f.hidden_field :value, { value: @questionary_choice_value } %>
+  <p>選択肢番号：<%= @questionary_choice_value %></p>
   
   <div class="field">
     <%= f.label :content %>
