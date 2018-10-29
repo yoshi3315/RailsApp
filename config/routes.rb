@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :questionary_results
   
   get 'questionary_choices/:id/new', to: 'questionary_choices#new'
-  resources :questionary_choices
+  resources :questionary_choices, only: [:create]
   
   get 'questionary_items/:id/new', to: 'questionary_items#new'
   resources :questionary_items, only: [:create]
