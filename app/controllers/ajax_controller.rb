@@ -6,7 +6,8 @@ class AjaxController < ApplicationController
   end
   
   def data
-    @ajax_data = Person.find(1)
+    @data = Person.where('name like ?', '%' + params[:name] + '%')
+    @data = @data.to_json.html_safe
   end
   
 end
