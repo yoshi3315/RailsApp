@@ -1,6 +1,7 @@
 class AjaxController < ApplicationController
   
   layout 'ajax'
+  require 'net/http' 
 
   def index
   end
