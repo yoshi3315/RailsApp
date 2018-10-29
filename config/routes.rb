@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :questionary_choices
   
   get 'questionary_items/:id/new', to: 'questionary_items#new'
-  resources :questionary_items
+  resources :questionary_items, only: [:create]
   
   post 'questionaries/:id', to: 'questionaries#sendform'
   resources :questionaries, except: [:edit, :update, :destroy]
