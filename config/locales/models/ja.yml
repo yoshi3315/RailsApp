@@ -19,6 +19,7 @@ ja:
         content: "設問"
       questionary_choice:
         content: "選択肢"
+        value: "選択肢番号"
       questionary_result:
         result: "結果"
   activemodel:
