@@ -10,13 +10,11 @@
   <% @calc.each do |ky, vl| %>
     <tr>
       <td><%= ky %></td>
-    </tr>
-    <table>
-      <tr>
+      <td>
         <% for v in vl %>
-          <td><%= v.to_i %></td>
+          <%= v.to_i %>
         <% end %>
-      </tr>
-    </table>
+      </td>
+    </tr>
   <% end %>
 </table>
