@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :questionary_items
   
   post 'questionaries/:id', to: 'questionaries#sendform'
-  resources :questionaries
+  resources :questionaries, except: [:edit, :update, :destroy]
   
   resources :answers
   
