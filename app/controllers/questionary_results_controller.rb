@@ -34,7 +34,7 @@ class QuestionaryResultsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_questionary_and_results
       @questionary = Questionary.find(params[:id])
-      @questionary_results = QuestionaryResult.where('questionary_id = ?', params[:id])
+      @questionary_results = QuestionaryResult.where(questionary_id: params[:id])
     end
     
 end
