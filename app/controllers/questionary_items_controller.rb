@@ -15,7 +15,7 @@ class QuestionaryItemsController < ApplicationController
 
     respond_to do |format|
       if @questionary_item.save
-        format.html { redirect_to "/questionary_choices/#{@questionary_item.id}/new/" }
+        format.html { redirect_to "/questionary_choices/#{@questionary_item.id}/new/", notice: "設問を登録しました：設問「#{@questionary_item.content}」" }
         format.json { render :show, status: :created, location: @questionary_item }
       else
         format.html { render :new }
