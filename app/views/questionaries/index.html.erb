@@ -15,8 +15,8 @@
     <% @questionaries.each do |questionary| %>
       <tr>
         <td><%= questionary.title %></td>
-        <td><%= 'あと、約' + ((questionary.deadline - DateTime.now) / (60*60*24)).to_i.to_s + '日' %>
-          <% if questionary.deadline > DateTime.now %>
+        <td><%= 'あと、約' + ((questionary.deadline - Time.zone.now) / (60*60*24)).to_i.to_s + '日' %>
+          <% if questionary.deadline > Time.zone.now %>
             <span class='not_finished'>受付中</span></td>
             <td>
               <%= link_to('アンケートを表示', questionary_path(questionary)) %>
