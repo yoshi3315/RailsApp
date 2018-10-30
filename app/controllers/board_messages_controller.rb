@@ -1,6 +1,7 @@
 class BoardMessagesController < ApplicationController
   before_action :set_board_message, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_account!
+  
   # GET /board_messages
   # GET /board_messages.json
   def index
