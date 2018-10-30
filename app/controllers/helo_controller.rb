@@ -8,7 +8,7 @@ class HeloController < ApplicationController
   
   def login_check
     @account = current_account
-    @msg = 'you logined at: ' + @account.current_sign_in_at.to_s
+    @msg = 'you logined at: '# + @account.current_sign_in_at.to_s
   end
   
 end
