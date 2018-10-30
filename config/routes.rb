@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   resources :board_messages
-  resources :board_users
+  
+  resources :board_users, only: [:index, :show, :update]
+  
   resources :data_pages
+  
   devise_for :accounts
   get 'helo/login_check'
   

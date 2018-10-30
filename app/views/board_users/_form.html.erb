@@ -10,23 +10,27 @@
       </ul>
     </div>
   <% end %>
+  
+  <table>
+    <tr class="field">
+      <th><%= f.label :nickname %></th>
+      <td><%= f.text_area :nickname %></td>
+    </tr>
+    
+    <%= f.hidden_field :account_id %>
 
-  <div class="field">
-    <%= f.label :nickname %>
-    <%= f.text_area :nickname %>
-  </div>
+    <div class="field">
+      <%= f.label :account_id %>
+      <%= f.number_field :account_id %>
+    </div>
 
-  <div class="field">
-    <%= f.label :account_id %>
-    <%= f.number_field :account_id %>
-  </div>
+    <tr class="field">
+      <th><%= f.label :memo %></th>
+      <td><%= f.text_area :memo, cols: 40, rows: 3 %></td>
+    </tr>
 
-  <div class="field">
-    <%= f.label :memo %>
-    <%= f.text_area :memo %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <tr class="actions">
+      <th></th><td><%= f.submit %></td>
+    </tr>
+  </table>
 <% end %>
