@@ -11,5 +11,16 @@ ja:
         title: "タイトル"
         message: "メッセージ"
         person: "ユーザー名"
+      questionary:
+        title: "アンケートタイトル"
+        description: "説明"
+        deadline: "締切"
+      questionary_item:
+        content: "設問"
+      questionary_choice:
+        content: "選択肢"
+        value: "選択肢番号"
+      questionary_result:
+        result: "結果"
   activemodel:
   <<: activerecord

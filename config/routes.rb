@@ -1,8 +1,23 @@
 Rails.application.routes.draw do
 
+  get 'questionary_results/:id/calc', to: 'questionary_results#calc'
+  resources :questionary_results, only: [:index, :show]
+  
+  get 'questionary_choices/:id/new', to: 'questionary_choices#new'
+  resources :questionary_choices, only: [:create]
+  
+  get 'questionary_items/:id/new', to: 'questionary_items#new'
+  resources :questionary_items, only: [:create]
+  
+  post 'questionaries/:id', to: 'questionaries#sendform'
+  resources :questionaries, except: [:edit, :update, :destroy]
+  
   resources :answers
+  
   resources :questions
+  
   resources :mycontacts
+  
   get 'blogs', to: 'blogs#index'
   get 'blogs/:id/genre', to: 'blogs#genre'
   get 'blogs/:id/:page/genre', to: 'blogs#genre'

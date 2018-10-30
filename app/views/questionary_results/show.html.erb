@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @questionary.title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Result</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionary_results.each do |result| %>
+      <tr>
+        <td><%= result.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to '集計データ', "/questionary_results/#{@questionary.id}/calc" %>
