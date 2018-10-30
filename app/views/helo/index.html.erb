@@ -1,1 +1,9 @@
-<%= @msg %>
+<h1>Helo#index</h1>
+<p><%= @msg %></p>
+<hr>
+<div>
+  <%= link_to('go to login_check page!', { action: 'login_check' }) %>
+</div>
+<div>
+  <%= link_to('Sign out', destroy_account_session_path, method: :delete) %>
+</div>
