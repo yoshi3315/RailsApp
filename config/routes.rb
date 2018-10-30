@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :data_pages
   devise_for :accounts
   get 'helo/login_check'
   
