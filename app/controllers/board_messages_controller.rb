@@ -5,7 +5,18 @@ class BoardMessagesController < ApplicationController
   # GET /board_messages
   # GET /board_messages.json
   def index
-    @board_messages = BoardMessage.all
+    @board_messages = BoardMessage.page([:page]).order('created_at desc')
+    users = BoardUser.where(account_id: current_account.id)
+    if users[0] == nil
+      user = BoardUser.new
+      user.account_id = current_account.id
+      user.nickname = '<<no name>>'
+      user.save
+      users = BoardUser.where(account_id: current_account.id)
+    end
+    @board_user = users[0]
+    @board_message = BoardMessage.new
+    @board_message.board_user_id = @board_user.id
   end
 
   # GET /board_messages/1
