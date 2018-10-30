@@ -36,14 +36,16 @@ class BoardMessagesController < ApplicationController
   # POST /board_messages
   # POST /board_messages.json
   def create
+    @board_messages = BoardMessage.page([:page]).order('created_at desc')
     @board_message = BoardMessage.new(board_message_params)
+    @board_user = BoardUser.where(account_id: current_account.id)
 
     respond_to do |format|
       if @board_message.save
-        format.html { redirect_to @board_message, notice: 'Board message was successfully created.' }
+        format.html { redirect_to board_messages_path, notice: 'Board message was successfully created.' }
         format.json { render :show, status: :created, location: @board_message }
       else
-        format.html { render :new }
+        format.html { render :index }
         format.json { render json: @board_message.errors, status: :unprocessable_entity }
       end
     end
