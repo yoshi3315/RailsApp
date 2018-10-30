@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :accounts
+  get 'helo/login_check'
+  
   get 'ajax/index'
   get 'ajax/data'
   post 'ajax/data'
