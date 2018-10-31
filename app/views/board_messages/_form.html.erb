@@ -10,18 +10,20 @@
       </ul>
     </div>
   <% end %>
+  
+  <table>
+    <tr class="field">
+      <th><%= f.label :content %></th>
+      <td><%= f.text_area :content, cols: 40, rows: 3 %></td>
+    </tr>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
+    <tr class="field">
+      <th><%= f.label :board_user_id %></th>
+      <td><%= @board_user.nickname %><%= f.hidden_field :board_user_id %></td>
+    </tr>
 
-  <div class="field">
-    <%= f.label :board_user_id %>
-    <%= f.number_field :board_user_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <tr class="actions">
+      <th></th><td><%= f.submit %></td>
+    </tr>
+  </table>
 <% end %>
