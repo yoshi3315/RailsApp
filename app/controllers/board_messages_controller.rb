@@ -1,6 +1,6 @@
 class BoardMessagesController < ApplicationController
-  before_action :set_board_messages, only: [:index, :create]
   before_action :authenticate_account!
+  before_action :set_board_messages, only: [:index, :create]
   
   # GET /board_messages
   # GET /board_messages.json
@@ -38,7 +38,7 @@ class BoardMessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board_messages
-      @board_messages = BoardMessage.page([:page]).order('created_at desc')
+      @board_messages = BoardMessage.page(params[:page]).order('created_at desc')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
